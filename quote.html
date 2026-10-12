@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Big" ng-controller="AppCtrl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA Asphalt</title>
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/angular-material.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/magnific-popup.min.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/flexslider.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="header-3">
+<div class="page-loader"></div>
+<!-- Top bar start -->
+<div class="top-bar md-padding dialogdemoBasicUsage" id="popupContainer">
+  <div class="container"> 
+    <!-- Row Start -->
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <ul class="left topbar-blocks">
+          <li><a href="mailto:info@saasphalt.co.za"><i class="fa fa-envelope" aria-hidden="true"></i> info@saasphalt.co.za </a></li>
+          <li><a href="tel:+27315643855 "><i class="fa fa-phone" aria-hidden="true"></i> 031 564 3855  </a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <ul class="topbar-blocks">
+          <li><a class="" href="quote.html"><i class="fa fa-calculator" aria-hidden="true"></i> Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Row End --> 
+  </div>
+</div>
+<!-- Top bar end --> 
+
+<!-- Header start -->
+<div id="sticker" class="header">
+  <div class="container"> 
+    <!-- Row Rtart -->
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="logo"> <a href="index.html"><img src="images/logo.png"></a> </div>
+      </div>
+      <div class="col-md-9 col-sm-9  col-xs-6"> 
+        <!--navegation-->
+        <div class="navigationwrape">
+          <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav-center nav navbar-nav">
+                <li> <a href="index.html">Home</a></li>
+                <li> <a href="index.html#about-us">About Us</a></li>
+                <li> <a href="index.html#services">Our Services</a></li>
+                <li> <a href="index.html#contact">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Row End --> 
+  </div>
+</div>
+<div class="main-heading">
+  <div class="container">
+    <h3>Get a Quote</h3>
+  </div>
+</div>
+<!--inner header end--> 
+
+<!--inner content start-->
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <form class="quote-form" name="quoteForm" method="post" action="action-quote.php">
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>First name</label>
+              <input name="firstname" ng-model="quote.firstName" required>
+              <div ng-messages="quoteForm.firstName.$error">
+                <div ng-message="required">First Name is required.</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Last name</label>
+              <input name="lastname" ng-model="quote.lastName" required>
+              <div ng-messages="quoteForm.lastName.$error">
+                <div ng-message="required">Last Name is required.</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Street</label>
+              <input name="street" ng-model="quote.street" required>
+              <div ng-messages="quoteForm.street.$error">
+                <div ng-message="required">Street Name is required.</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>City</label>
+              <input name="city" ng-model="quote.city" required>
+              <div ng-messages="quoteForm.city.$error">
+                <div ng-message="required">City Name is required.</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Province</label>
+              <input name="state" ng-model="quote.state" required>
+              <div ng-messages="quoteForm.state.$error">
+                <div ng-message="required">Province is required.</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Postal Code</label>
+              <input name="postalCode" ng-model="quote.postalCode" placeholder="1234" ng-pattern="/^[0-9]{4}$/" md-maxlength="4" required>
+              <div ng-messages="quoteForm.postalCode.$error">
+                <div ng-message="required">Postal Code Name is required.</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div layout-gt-xs="row">
+            <md-input-container class="md-block" flex-gt-xs>
+              <label>Company Name</label>
+              <input name="company" ng-model="quote.company">
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+              <label>Email Address</label>
+              <input required type="email" name="email" ng-model="quote.Email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+              <div ng-messages="quoteForm.Email.$error" role="alert">
+                <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']"> Your email must be between 10 and 100 characters long and look like an e-mail address. </div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+              <label>Contact Number</label>
+              <input required type="number" name="phone" ng-model="quote.phone">
+              <div ng-messages="quoteForm.phone.$error">
+                <div ng-message="required">Contact Number is required.</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-xs>
+              <label>Message</label>
+              <input required type="text" name="message" ng-model="quote.message">
+              <div ng-messages="quoteForm.message.$error">
+                <div ng-message="required">Message is required.</div>
+              </div>
+            </md-input-container>
+            <md-button class="registration-btn" type="submit">Submit</md-button>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div>
+</div>
+
+<!--Footer start-->
+<div class="footer-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="footer-logo"><img alt="SA Asphalt" src="images/logo-footer.png"></div>
+        <p>Through hard work, dedication and attention to detail, we have placed ourselves as one of the lead asphalting companies within the Asphalting industry. We pride ourselves in our ability to provide a professional, high quality service to our customers. Our expertise includes residential driveways, heavy duty asphalt, pot-holes, resurfacing, repairing and rejuvenating existing asphalt surfaces in the residential, industrial and commercial markets.</p>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <h3>Residential Services</h3>
+        <ul class="footer-blocks">
+          <li>Driveways</li>
+          <li>Resurfacing</li>
+          <li>Repairs </li>
+          <li>Tar Shield</li>
+          <li>Drainage &amp; Kerbing</li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-12">
+        <h3>Commercial Services</h3>
+        <ul class="footer-blocks">
+          <li>Driveways</li>
+          <li>Parking Lots</li>
+          <li>Traffic Calming</li>
+          <li>Resurfacing</li>
+          <li>Repairs </li>
+          <li>Potholes </li>
+          <li>Tar Shield</li>
+          <li>Drainage &amp; Kerbing</li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <h3>Quick Links</h3>
+        <ul class="footer-blocks">
+          <li> <a href="gallery.html"> Gallery</a></li>
+          <li> <a href="pdf/Driveway Care.pdf"> Driveway Care </a></li>
+          <li> <a href="quote.html"> Get A Quote</a></li>
+        </ul>
+        <h3 class="m-t-10">Contact Us</h3>
+        <div class="call-us"> <a href="tel:+27315643855 ">031 564 3855 </a></div>
+        <div class="cell"> <a href="https://wa.me/27836030953">083 603 0953</a></div>
+      </div>
+    </div>
+    <div class="footerWrp">
+      <div class="row">
+        <div class="col-md-4 col-sm-7">
+          <div class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script> Steve Services t/a SA Asphalt | All Rights Reserved</div>
+        </div>
+        <div class="col-md-4 col-sm-7">
+          <div class="foot"><a href="privacy.html">Privacy Policy</a></div>
+        </div>
+        <div class="col-md-4 col-sm-7">
+          <div class="madbot">Website hosting and design by <a href="https://madbot.co.za">madbot</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/modernizr.min.js"></script> 
+<script type="text/javascript" src="js/angular.min.js"></script> 
+<script type="text/javascript" src="js/angular-animate.min.js"></script> 
+<script type="text/javascript" src="js/angular-aria.min.js"></script> 
+<script type="text/javascript" src="js/angular-messages.min.js"></script> 
+<script type="text/javascript" src="js/angular-material.min.js"></script> 
+<script type="text/javascript" src="js/assets-cache.js"></script> 
+<script type="text/javascript" src="js/app.js"></script> 
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> 
+<script type="text/javascript" src="js/jquery.easing.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/jquery.sticky.js"></script> 
+<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script> 
+<script type="text/javascript" src="js/jquery.localScroll.min.js"></script> 
+<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script> 
+<script type="text/javascript" src="js/owl.carousel.js"></script> 
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script> 
+<script type="text/javascript" src="js/wew.min.js"></script> 
+<script type="text/javascript" src="js/scrolltopcontrol.js"></script> 
+<script type="text/javascript" src="js/jquery.slicknav.js"></script> 
+<script type="text/javascript" src="js/script.js"></script> 
+<script type="text/javascript" src="js/smooth-scroll.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-181267603-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-181267603-1');
+</script>
+
+</body>
+</html>
